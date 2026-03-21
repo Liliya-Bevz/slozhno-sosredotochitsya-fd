@@ -268,7 +268,7 @@ section {
   align-self: center;
 }
 
-@media (max-width: 1024px) {
+@media (width < 1024px) {
   .page {
     width: 768px;
     padding: 0 20px;
@@ -290,7 +290,7 @@ section {
   }
 }
 
-@media (max-width: 768px) {
+@media (width < 768px) {
   .page {
     width: 375px;
     padding: 0 10px;
@@ -318,6 +318,7 @@ section {
   .concentration,
   .improvement {
     grid-template-columns: 1fr;
+    gap: 0;
   }
   section {
     margin-bottom: 30px;
@@ -328,7 +329,8 @@ section {
   .gallery {
     grid-template-columns: 1fr;
     grid-template-rows: 142px 355px 237px 355px 237px;
-    margin-bottom: 0;
+    margin: 0;
+    gap: 10px;
   }
    .gallery__item:nth-child(n) {
     grid-column: 1;
