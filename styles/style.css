@@ -1,4 +1,19 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
+@font-face {
+  font-family: 'IBM Plex mono';
+  src: url(./IBMPlexMono-Regular.woff) format('woff');
+  font-weight: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IBM Plex mono';
+  src: url(./IBMPlexMono-Bold.woff) format('woff');
+  font-weight: bold;
+  font-weight: 700;
+  font-display: swap;
+}
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
@@ -54,9 +69,8 @@
 }
 
 .header__theme-menu-button {
-font-family: IBM Plex Mono;
+font-family: 'IBM Plex mono', sans-serif;
 font-weight: 400;
-font-style: Regular;
 font-size: 18px;
 line-height: 18px;
 letter-spacing: 0%;
@@ -85,9 +99,8 @@ padding: 0 13px 5px;
 .rec-decoration {
   display: var(--rec-display);
   position: absolute;
-  font-family: IBM Plex Mono;
+  font-family: 'IBM Plex mono', sans-serif;
   font-weight: 400;
-  font-style: Regular;
   font-size: 18px;
   line-height: 25px;
   letter-spacing: 0%;
@@ -109,23 +122,26 @@ padding: 0 13px 5px;
 }
 
 .website_title {
-  font-family: IBM Plex Mono;
+  font-family: 'IBM Plex mono', sans-serif;
   font-weight: 700;
-  font-style: Bold;
-  font-size: 157px;
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem) ;
   line-height: 83%;
   letter-spacing: 0%;
   color: var(--ws-title);
   text-shadow: 4px 4px 0px var(--accent-color);
+  width: 100%;
+}
+
+.header_title {
+  margin-top: 185px;
   margin-bottom: 114px;
 }
 
 .description {
   width: 491px;
   justify-self: end;
-  font-family: IBM Plex Mono;
+  font-family: 'IBM Plex mono', sans-serif;
   font-weight: 700;
-  font-style: Bold;
   font-size: 18px;
   line-height: 23.4px;
   letter-spacing: 0%;
@@ -138,9 +154,8 @@ section {
 }
 
 .section_title {
-  font-family: IBM Plex Mono;
+  font-family: 'IBM Plex mono', sans-serif;
   font-weight: 700;
-  font-style: Bold;
   font-size: 18px;
   line-height: 23.4px;
   letter-spacing: 0%;
@@ -149,9 +164,8 @@ section {
 }
 
 .content_title {
-  font-family: IBM Plex Mono;
+  font-family: 'IBM Plex mono', sans-serif;
   font-weight: 700;
-  font-style: Bold;
   font-size: 18px;
   line-height: 23.4px;
   letter-spacing: 0%;
@@ -161,19 +175,18 @@ section {
 }
 
 .content_subtitle {
-  font-family: IBM Plex Mono;
+  font-family: 'IBM Plex mono', sans-serif;
   font-weight: 400;
-  font-style: Regular;
   font-size: 18px;
   line-height: 23.4px;
   letter-spacing: 0%;
   background-color: var(--text-bg-color);
+  margin-bottom: 10px;
 }
 
 .content_text {
-  font-family: IBM Plex Mono;
+  font-family: 'IBM Plex mono', sans-serif;
   font-weight: 400;
-  font-style: Regular;
   font-size: 18px;
   line-height: 23.4px;
   letter-spacing: 0%;
@@ -203,6 +216,11 @@ section {
 .factors {
   display: grid;
   grid-template-rows: min-content min-content;
+}
+
+.concentration_title {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .concentration {
@@ -261,10 +279,10 @@ section {
   min-height: 668px;
   display: grid;
   padding: 20px 0;
+  justify-content: center;
 }
 
 .footer_title {
-  justify-self: center;
   align-self: center;
 }
 
@@ -284,6 +302,17 @@ section {
     flex-direction: column;
     justify-self: end;
     margin-top: 172px;
+  }
+  .header_title {
+    margin-top: 0;
+    margin-bottom: 162px;
+  }
+  .description {
+    width: 364px;
+  }
+  .concentration {
+    grid-template-columns: 1fr;
+    gap: 0;
   }
   .gallery {
     grid-template-rows: 192px 230px 318px;
@@ -307,16 +336,18 @@ section {
     margin-top: 65px;
   }
   .website_title {
-    font-size: 116px;
-    margin-bottom: 55px;
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  }
+  .header_title {
+    margin: 0 0 55px;
   }
   .description {
     width: 100%;
   }
   .problems,
   .factors,
-  .concentration,
-  .improvement {
+  .improvement,
+  .concentration_title {
     grid-template-columns: 1fr;
     gap: 0;
   }
