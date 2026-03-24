@@ -1,17 +1,4 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-@font-face {
-  font-family: 'IBM Plex mono';
-  src: url(./IBMPlexMono-Regular.woff) format('woff');
-  font-weight: 400;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'IBM Plex mono';
-  src: url(./IBMPlexMono-Bold.woff) format('woff');
-  font-weight: 700;
-  font-display: swap;
-}
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
@@ -20,13 +7,13 @@
  background-size: cover;
  background-attachment: fixed;
  background-color: var(--bg-color);
- width: 1024px;
  padding: 0 20px;
 }
 
 .header {
   height: 100vh;
   min-height: 668px;
+  min-width: 375px;
   display: grid;
   padding: 20px 0;
   margin-bottom: 60px;
@@ -77,21 +64,23 @@ color: var(--menu-button);
 text-transform: lowercase;
 background: none;
 border: none;
-padding: 0 13px 5px;
+padding: 1px 13px 6px;
 }
 
-.header__theme-menu-button:active {
+.header__theme-menu-button_active {
   border: 1px solid var(--menu-button);
 }
 
 .header__theme-menu-button:hover {
-  border: 2px solid var(--menu-hover);
+  border: 1px solid var(--menu-hover);
 }
 
 .header__theme-menu-button:focus {
-  text-decoration: underline;
-  text-decoration-color: var(--menu-button);
+  outline: none;
+}
 
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid var(--menu-button);
 }
 
 .rec-decoration {
@@ -111,8 +100,8 @@ padding: 0 13px 5px;
 .rec-decoration::after {
   content: '';
   display: inline-block;
-  width: 9px;
-  height: 9px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   background-color: rgba(255, 0, 112, 1);
   box-shadow: 0px 0px 4px 2px rgba(255, 0, 112, 1);
@@ -183,8 +172,13 @@ section {
   line-height: 23.4px;
   letter-spacing: 5%;
   word-spacing: 20%;
+  color: var(--content-title);
   background-color: var(--text-bg-color);
   margin-bottom: 10px;
+}
+
+.increased_indentation {
+  margin-bottom: 20px;
 }
 
 .content_text {
@@ -204,48 +198,48 @@ section {
 }
 
 .text-shadow:hover {
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  border-bottom: 1px solid var(--text-color);
 }
 
 .text-shadow:focus {
+  outline: none;
+}
+
+.text-shadow:focus-visible {
   border: 1px solid var(--text-color);
 }
 
-.problems {
+.content-section {
   display: grid;
-  grid-template-columns: 1fr 2fr;
   column-gap: 20px;
 }
 
+.problems {
+  grid-template-columns: 1fr 2fr;
+}
+
 .factors {
-  display: grid;
   grid-template-rows: min-content min-content;
 }
 
 .concentration_title {
-  display: grid;
   grid-template-columns: 1fr 1fr;
 }
 
 .concentration {
-  display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-row-start: 2;
   grid-column: 1/3;
-  gap: 20px;
 }
 
 .improvement {
-  display: grid;
   grid-template-columns: 1fr 2fr;
 }
 
 .gallery {
-  display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 260px 315px 433px;
-  gap: 20px;
+  row-gap: 20px;
   margin: 20px 0 60px;
 }
 
@@ -293,7 +287,6 @@ section {
 
 @media (width < 1024px) {
   .page {
-    width: 768px;
     padding: 0 20px;
   }
   .header,
@@ -326,7 +319,6 @@ section {
 
 @media (width < 768px) {
   .page {
-    width: 375px;
     padding: 0 10px;
   }
   .header,
@@ -349,10 +341,7 @@ section {
   .description {
     width: 100%;
   }
-  .problems,
-  .factors,
-  .improvement,
-  .concentration_title {
+  .content-section {
     grid-template-columns: 1fr;
     gap: 0;
   }
@@ -363,7 +352,6 @@ section {
     margin-bottom: 40px;
   }
   .gallery {
-    grid-template-columns: 1fr;
     grid-template-rows: 142px 355px 237px 355px 237px;
     margin: 0;
     gap: 10px;

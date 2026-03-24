@@ -11,6 +11,7 @@
   */
   --bg-image: url(../images/cover-image-light.png);
   --bg-color: rgba(255, 241, 247, 1);
+  --decor-color: rgba(53, 52, 48, 1);
   --menu-button: rgba(53, 52, 48, 1);
   --menu-hover: rgba(50, 49, 45, 0.4);
   --ws-title: rgba(255, 194, 230, 1);
@@ -41,5 +42,4 @@
     --rec-display: none;
   }
   /* Остальные стили, только при необходимости */
-
 } 
