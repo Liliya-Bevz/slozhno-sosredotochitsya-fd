@@ -105,6 +105,11 @@ padding: 1px 13px 6px;
   margin-left: 10px;
 }
 
+.cover {
+  display: grid;
+  align-content: center;
+}
+
 .website_title {
   font-family: 'IBM Plex mono', sans-serif;
   font-weight: 700;
@@ -116,12 +121,11 @@ padding: 1px 13px 6px;
 }
 
 .header_title {
-  margin-top: 185px;
+  margin-top: -70px;
   margin-bottom: 114px;
   margin-left: -20px;
 }
 
-/* Уже проверила в нескольких браузерах, на разных разрешениях (от 768px и больше) - всегда элемент находится справа, не понимаю, почему у Вас слева. */
 .description {
   width: 491px;
   justify-self: end;
@@ -201,8 +205,7 @@ section {
   column-gap: 20px;
 }
 
-.problems,
-.improvement {
+.two_columns_section {
   grid-template-columns: 1fr 2fr;
 }
 
@@ -286,11 +289,12 @@ section {
     margin-top: 172px;
   }
   .header_title {
-    margin-top: 20px;
-    margin-bottom: 162px;
+    margin-top: -310px;
+    margin-bottom: 0px;
   }
   .description {
     width: 364px;
+    margin-top: -45px;
   }
   .concentration {
     grid-template-columns: 1fr;
@@ -320,7 +324,7 @@ section {
     font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   }
   .header_title {
-    margin: 30px 0 55px;
+    margin: -100px 0 100px;
   }
   .description {
     width: 100%;
